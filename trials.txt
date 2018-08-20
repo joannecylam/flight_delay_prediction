@@ -13,3 +13,7 @@ XGBRegressor(base_score=0.5, booster='gbtree', colsample_bylevel=1,
        silent=True, subsample=1)
 mean absolution error: 0.01652278244990533
 mean_squared_error: 0.005188649437993309
+
+MLP Regressor (default)
+mean absolution error: 0.01676643654663402
+mean_squared_error: 0.00442393500533353
