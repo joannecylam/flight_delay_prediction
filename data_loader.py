@@ -1,5 +1,10 @@
+import pandas as pd
+import datetime
+from sklearn.preprocessing import MinMaxScaler
+
+
 class PrepareData(object):
-    
+
     def __init__(self, filename="flight_delays_data.csv"):
         self.cnt_var = ['Week', 'std_hour', 'delay_time', 'is_claim']
         self.bin_var = ['Arrival', 'Airline']
@@ -9,8 +14,8 @@ class PrepareData(object):
     def normalize_df(self, df):
         scaler = MinMaxScaler(feature_range=(0, 1))
         values = scaler.fit_transform(df.values)
-        return pd.DataFrame(values, columns=df.columns.tolist(), index=df.index)      
-    
+        return pd.DataFrame(values, columns=df.columns.tolist(), index=df.index)
+
     def cvt_bin(self, df):
         for _var in self.bin_var:
             print "converting bin var:", _var
@@ -45,19 +50,19 @@ class PrepareData(object):
             })
         else:
             kwargs.update({'index_col': 'flight_id'})
-            
+
         kwargs.update(additional_kwargs)
         df = pd.read_csv(
-            self.filename, 
-            na_values=['NaN', '?','nan'], 
+            self.filename,
+            na_values=['NaN', '?','nan'],
             **kwargs)
         return df
-    
+
     def clean_df(self, df):
         df.drop(self.drop_var + self.bin_var, axis=1, inplace=True)
         df = self.cvt_delay_time(df)
         return df
-        
+
     def load_data(self, additional_kwargs={}, time_series=False):
         df = self.load_raw_data(additional_kwargs, time_series)
         df = self.cvt_bin(df)
@@ -65,7 +70,7 @@ class PrepareData(object):
         df = self.cvt_datetime(df)
         df = self.normalize_df(df)
         return df
-    
+
     def cvt_datetime(self, df, dt_label="flight_date"):
         flight_dates = [datetime.datetime.strptime(str_dt, '%Y-%m-%d').date() for str_dt in df['flight_date'].values]
         df['flight_year'] = [dt.year for dt in flight_dates]
@@ -73,6 +78,6 @@ class PrepareData(object):
         df['flight_day'] = [dt.day for dt in flight_dates]
         df.drop(dt_label, axis=1, inplace=True)
         return df
-    
+
     def build_train(self, df, label="delay_time"):
         return df.drop('delay_time', axis=1), df['delay_time']
