@@ -1,7 +1,7 @@
 RandomForestRegressor(default setting)
 loss = mse
-mean absolution error: 0.002493163075291389
-mean_squared_error: 0.0077075114565195325
+mean absolution error: 0.007692755723782555
+mean_squared_error: 0.0024542359267174314
 mean score (cv5): 0.8738
 
 

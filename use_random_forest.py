@@ -18,5 +18,5 @@ ms_r = mean_squared_error(results, test_y.values)
 print "mean absolution error:", ma_r
 print "mean_squared_error:", ms_r
 
-scores = cross_val_score(rf, x, y, cv=5)
+scores = cross_val_score(rf, x, y, cv=3)
 print "score:", scores.mean()

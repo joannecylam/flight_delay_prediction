@@ -40,7 +40,7 @@ class PrepareData(object):
         self.delay_max = max(times)
         return df
 
-    def load_raw_data(self, additional_kwargs, time_series):
+    def load_raw_data(self, additional_kwargs={}, time_series=False):
         kwargs = {}
         if time_series:
             kwargs.update({
