@@ -19,10 +19,10 @@ Readers may re-produce the model by running the corresponding script.
 1: Random Forest
  - use_random_forest.ipynb
 2: Xgboost
- - use_xgboost_regressor.py
+ - use_xgboost_regressor.ipynb
 3: MLP Regressor
  - use_nn.ipynb
 
- ### Visualizations:
- There is a scattered plot of the best prediction results against actual value.
- The code can be found in visualization.ipynb.
+### Visualizations:
+There is a scattered plot of the best prediction results against actual value.
+The code can be found in visualization.ipynb
