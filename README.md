@@ -6,8 +6,9 @@
 3. Constant variable "Departure" is dropped to reduce training cost.
 
 ## Results Evaluation
-Total three different models are applied.
-Readers may re-produce the model by running the corresponding script.
+Total three different models are applied. <br />
+Readers may re-produce the model by running the corresponding script. <br />
+### Best Result using Random Forest Regressor<br />
 ![alt text](https://github.com/joannecylam/flight_delay_prediction/blob/master/prediction_vs_true_value_plot.png)
 
 ### Environment Requirements:
@@ -25,5 +26,5 @@ Readers may re-produce the model by running the corresponding script.
  - use_nn.ipynb
 
 ### Visualizations:
-There is a scattered plot of the best prediction results against actual value.
+There is a scattered plot of the best prediction results against actual value. <br />
 The code can be found in visualization.ipynb
