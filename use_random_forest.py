@@ -15,10 +15,11 @@ rf = RandomForestRegressor(n_estimators=90, boostrap=True)
 rf.fit(train_x, train_y)
 results = rf.predict(test_x)
 
-ma_r = mean_absolute_error(results, test_y.values) 
-ms_r = mean_squared_error(results, test_y.values) 
+ma_r = mean_absolute_error(results, test_y.values)
+ms_r = mean_squared_error(results, test_y.values)
 print "mean absolution error:", ma_r
 print "mean_squared_error:", ms_r
 
-#scores = cross_val_score(rf, x, y, cv=5)
-#print "score:", scores.mean()
+## reduce to 3 to save computation time
+scores = cross_val_score(rf, x, y, cv=3)
+print "score:", scores.mean()

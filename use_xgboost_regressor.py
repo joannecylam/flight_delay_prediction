@@ -7,7 +7,6 @@ import pickle
 import pandas as pd
 import xgboost as xgb
 
-
 ppd = PrepareData()
 df = ppd.load_data()
 x, y = ppd.build_train(df)
