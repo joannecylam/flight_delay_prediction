@@ -8,7 +8,8 @@
 ## Results Evaluation
 Total three different models are applied.
 Readers may re-produce the model by running the corresponding script.
-![alt text](https://github.com/joannecylam/flight_delay_prediction/prediction_vs_true_value_plot.png)
+![alt text](https://github.com/joannecylam/flight_delay_prediction/blob/master/prediction_vs_true_value_plot.png)
+
 ### Environment Requirements:
 1. python 2.7
 2. sklearn
