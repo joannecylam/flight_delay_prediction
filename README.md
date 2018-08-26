@@ -19,9 +19,9 @@ Readers may re-produce the model by running the corresponding script. <br />
 
 ### Models:
 1: Random Forest
- - use_random_forest.ipynb
+ - use_random_forest.ipynb<br />
 2: Xgboost
- - use_xgboost_regressor.ipynb
+ - use_xgboost_regressor.ipynb<br />
 3: MLP Regressor
  - use_nn.ipynb
 
